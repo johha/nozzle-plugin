@@ -5,7 +5,6 @@ import (
 
 	"github.com/cloudfoundry/cli/cf/terminal"
 	"github.com/cloudfoundry/cli/flags"
-	"github.com/cloudfoundry/cli/flags/flag"
 	"github.com/cloudfoundry/cli/plugin"
 	"github.com/jtuchscherer/nozzle-plugin/firehose"
 )
@@ -44,7 +43,7 @@ func (c *NozzlerCmd) GetMetadata() plugin.PluginMetadata {
 
 func setupFlags() map[string]flags.FlagSet {
 	fs := make(map[string]flags.FlagSet)
-	fs["debug"] = &cliFlags.BoolFlag{Name: "debug", Usage: "used for debugging"}
+	fs["debug"] = &flags.BoolFlag{Name: "debug", Usage: "used for debugging"}
 	return fs
 }
 
